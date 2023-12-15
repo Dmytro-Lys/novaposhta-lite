@@ -1,0 +1,11 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 700;
+}
+
+.link:hover {
+  color: darkviolet;
+}

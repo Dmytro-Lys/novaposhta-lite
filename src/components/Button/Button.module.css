@@ -1,0 +1,9 @@
+.btn {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
+
+  transition: background-color var(--trans-hv);
+}

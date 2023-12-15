@@ -1,2 +1,1 @@
-# novaposhta-advanced
-Novaposhta advanced app
+# Nova poshta advanced app

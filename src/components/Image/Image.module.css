@@ -1,0 +1,10 @@
+.img-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.img {
+  object-fit: cover;
+}

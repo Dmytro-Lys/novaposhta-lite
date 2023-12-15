@@ -1,0 +1,18 @@
+.container {
+  margin-top: 0;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../images/phonebook.jpg);
+}
+.title {
+  font-weight: 700;
+  font-size: 64;
+  text-align: center;
+  padding: 20px;
+  margin-top: calc(20vh);
+  color: darkblue;
+}

@@ -8,8 +8,8 @@ import { Layout } from './Layout';
 // import { selectIsRefreshing } from '../redux/auth/selectors';
 
 const HomePage = lazy(() => import('../pages/Home'));
-const CatalogPage = lazy(() => import('../pages/Catalog'));
-const FavoritesPage = lazy(() => import('../pages/Favorites'));
+const IncomingsPage = lazy(() => import('../pages/Incomings'));
+const OutgoingsPage = lazy(() => import('../pages/Outgoings'));
 // const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
@@ -25,8 +25,8 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/incoming" element={<CatalogPage />} />
-          <Route path="/outgoing" element={<FavoritesPage />}/>
+          <Route path="/incoming" element={<IncomingsPage />} />
+          <Route path="/outgoing" element={<OutgoingsPage />}/>
         </Route>
     </Routes>
   );

@@ -4,7 +4,9 @@ import { novaposhtaApi } from "API/novaposhtaApi";
 
 import {receiversReduser } from "./receivers/receiversSlice"
 import { rootReducer } from "./root/slice";
-import { queryReduser } from "./query/querySlice";
+import { queryReducer } from "./query/querySlice";
+import { modalsReducer } from "./modals/modalsSlice";
+import { documentsReducer } from "./documents/documentsSlice";
 import { persistStore, persistReducer, FLUSH, REHYDRATE,
   PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
@@ -20,7 +22,9 @@ export const store = configureStore({
     root: rootReducer,
     receivers: persistReducer(receiversPersistConfig, receiversReduser),
     [novaposhtaApi.reducerPath]: novaposhtaApi.reducer,
-    query: queryReduser
+    query: queryReducer,
+    modals: modalsReducer,
+    documents: documentsReducer
     // filterFavorites: filterFavoritesReduser,
     // adverts: advertsReduser,
     // filter: filterReduser

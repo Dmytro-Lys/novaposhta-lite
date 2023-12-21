@@ -1,19 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const receiversInitialState = {
-    items: [
-    {
-        id: '1',
-        apiKey: 'api1',
-        receiverName: 'ПП "Аграрні інвестиції"'
-    },
-    {
-        id: '2',
-        apiKey: 'api2',
-        receiverName: 'ТОВ АФ "Ім. Чапаєва"'
-    }
-    ],
-    selectItem: '1'
+    items:[],
+    selectItem: ''
 };
 
 const receiversSlice = createSlice({

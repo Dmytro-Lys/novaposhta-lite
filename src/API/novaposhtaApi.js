@@ -6,9 +6,10 @@ export const novaposhtaApi = createApi({
         baseUrl: 'https://api.novaposhta.ua/v2.0/json/'
     }),
     endpoints: (build) => ({
-        getIncomingDocuments: build.query({
+        getIncomingDocuments: build.mutation({
             query: (body) => {
                 return {
+                    method: 'POST',
                     body
                 }
             }
@@ -17,4 +18,4 @@ export const novaposhtaApi = createApi({
     })
 })
 
-export const { useGetIncomingDocumentsQuery} = novaposhtaApi
+export const { useGetIncomingDocumentsMutation} = novaposhtaApi

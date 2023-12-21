@@ -1,12 +1,19 @@
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { formatDate } from 'API/helpers';
+import { useSelector } from 'react-redux';
+import { getDocuments } from 'redux/documents/selectors';
+import { getLimit, getPage } from 'redux/query/selectors';
 
-const DocumentsList = (documents) => {
 
+const DocumentsList = () => {
+
+    const documents = useSelector(getDocuments)
+    const pageSize = useSelector(getLimit)
+    const page = useSelector(getPage)
 
     const columns = [
-        { field: 'Number', headerName: 'Номер', width: 140 },
+        { field: 'id', headerName: 'Номер', width: 140 },
         { field: 'TrackingStatusName', headerName: 'Статус', width: 100 },
         { field: 'DateTime', headerName: 'Дата створення', width: 100 },
         { field: 'ScheduledDeliveryDate', headerName: 'Плановий час доставки', width: 100 },
@@ -51,7 +58,7 @@ const DocumentsList = (documents) => {
         Note
     }) => {
         return {
-            Number,
+            id: Number,
             TrackingStatusName,
             DateTime: formatDate(DateTime),
             ScheduledDeliveryDate: formatDate(ScheduledDeliveryDate),
@@ -74,18 +81,26 @@ const DocumentsList = (documents) => {
         }
     })
     return (
-        <Box sx={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
+        <Box sx={{ minHeight: 50, width: '100%' }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          hideFooter
+          // hideFooterPagination
         // initialState={{
         //   pagination: {
+    
         //     paginationModel: {
-        //       pageSize: 5,
+        //       pageSize,
         //     },
         //   },
-        // }}
-        // pageSizeOptions={[5]}
+        //   }}
+        //  pageSize={pageSize}
+          pageSizeOptions={[5, 10, 20, 50, 100]}
+          paginationModel={{
+            page: page - 1,
+            pageSize
+          }} 
         // checkboxSelection
         disableRowSelectionOnClick
       />

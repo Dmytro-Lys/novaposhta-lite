@@ -24,4 +24,4 @@ const querySlice = createSlice({
 })
 
 export const { setLimit, setPage } = querySlice.actions;
-export const queryReduser = querySlice.reducer;
+export const queryReducer = querySlice.reducer;

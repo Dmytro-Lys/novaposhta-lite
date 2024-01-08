@@ -1,0 +1,19 @@
+@layer rdg.Cell {
+  .cj343x07-0-0-beta-41 {
+    white-space: normal;
+  }
+}
+
+@layer rdg.Row {
+  .r1upfr807-0-0-beta-41 {
+    line-height: 1.5;
+    font-size: 12px;
+  }
+}
+
+@layer rdg.HeaderRow {
+  .h10tskcx7-0-0-beta-41 {
+    line-height: 1.5;
+    font-size: 13px;
+  }
+}

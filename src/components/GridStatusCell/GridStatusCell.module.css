@@ -1,0 +1,25 @@
+.status {
+  position: relative;
+}
+
+.status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: -10px;
+}
+
+.received::before {
+  background-color: green;
+}
+
+.moved::before {
+  background-color: darkblue;
+}
+
+.arrived::before {
+  background-color: darkorange;
+}

@@ -1,4 +1,4 @@
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 // import { useGetIncomingDocumentsMutation } from 'API/novaposhtaApi';
 import {  useSelector, useDispatch } from 'react-redux';
 import { getSelectApiKey } from 'redux/receivers/selectors';
@@ -23,6 +23,7 @@ const Incomings = () => {
             firstRender.current = false
             return
         }
+        if (!apiKey) return
         dispatch(fetchDocuments({
                 apiKey,
                 modelName: 'InternetDocument',
@@ -38,10 +39,12 @@ const Incomings = () => {
     
     
     return (
-         <Container component="main" maxWidth='100%'>
+        //  <Container component="main" maxWidth='100%'>
+         <div>
             <DocumentsList />
-            <Pagination/>
-          </Container>
+            <Pagination />
+         </div>   
+        //   </Container>
     )
 }
 

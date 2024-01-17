@@ -7,7 +7,7 @@ import { Layout } from './Layout';
 // import { refreshUser } from '../redux/auth/operations';
 // import { selectIsRefreshing } from '../redux/auth/selectors';
 
-const HomePage = lazy(() => import('../pages/Home'));
+// const HomePage = lazy(() => import('../pages/Home'));
 const IncomingsPage = lazy(() => import('../pages/Incomings'));
 const OutgoingsPage = lazy(() => import('../pages/Outgoings'));
 // const ContactsPage = lazy(() => import('../pages/Contacts'));
@@ -24,8 +24,8 @@ export const App = () => {
   return  (
     <Routes>
       <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/incoming" element={<IncomingsPage />} />
+          <Route index element={<IncomingsPage />} />
+          {/* <Route path="/incoming" element={<IncomingsPage />} /> */}
           <Route path="/outgoing" element={<OutgoingsPage />}/>
         </Route>
     </Routes>

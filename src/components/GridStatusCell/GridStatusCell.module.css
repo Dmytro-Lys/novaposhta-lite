@@ -1,5 +1,7 @@
 .status {
   position: relative;
+  margin-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .status::before {
@@ -22,4 +24,8 @@
 
 .arrived::before {
   background-color: darkorange;
+}
+
+.problematic::before {
+  background-color: darkred;
 }

@@ -6,6 +6,7 @@ const GridStatusCell = ({ text }) => {
     switch (statusName) {
       case 'Прибув у відділення': return css.arrived;
       case 'Отримано': return css.received;
+      case 'Проблемні': return css.problematic;
       default: return css.moved;
     }
   }  

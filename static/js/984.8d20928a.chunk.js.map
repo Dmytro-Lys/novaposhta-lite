@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/984.8d20928a.chunk.js","mappings":"yIAUA,UARkB,WACd,OACI,0BACI,wBAAI,oBAGf,C","sources":["pages/Outgoings.jsx"],"sourcesContent":["\n\nconst Favorites = () => {\n    return (\n        <div>\n            <h2>Favorites Cars</h2>\n        </div>\n    )\n}\n\nexport default Favorites"],"names":[],"sourceRoot":""}

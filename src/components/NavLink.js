@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Navlink = styled(NavLink)`
-  color: mediumblue;
+  color: black;
 
   &.active {
-    color: darkviolet;
+    color: darkblue;
   }
 `;

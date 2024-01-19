@@ -1,21 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchDocuments } from "API/novaposhtaAxiosAPI";
+import { fetchDocuments, fetchDocumentStatus } from "API/novaposhtaAxiosAPI";
+import { getStatusTime} from "API/helpers";
 const documentsInitialState = {
     items: [],
     count: 0
 }
 
-const fetchFulfilled = (state, { payload }) => {
+const fetchDocumentsFulfilled = (state, { payload }) => {
     state.items = payload.data[0].result;
     state.count = payload.info.totalCount;
 } 
+
+const fetchDocumentStatusFulFilled = (state, { payload }) => {
+    const { Barcode, EventDescription } = payload.data[0].movement.now[0]
+    const statusTime = getStatusTime(payload.data[0].movement.now[0])
+    const index = state.items.findIndex(document => document.Number === Barcode)
+    if (index !== -1) state.items[index].TrackingCurrentStatus = <>{EventDescription}<br />{statusTime}</>
+}
 
 const documentsSlice = createSlice({
     name: "documents",
     initialState: documentsInitialState,
      extraReducers: (builder) =>{
       builder
-        .addCase(fetchDocuments.fulfilled, fetchFulfilled)
+             .addCase(fetchDocuments.fulfilled, fetchDocumentsFulfilled)
+             .addCase(fetchDocumentStatus.fulfilled, fetchDocumentStatusFulFilled)
     }
 })
 

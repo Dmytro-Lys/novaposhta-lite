@@ -4,8 +4,9 @@
   border-radius: 4px;
   padding: 12px;
   font-weight: 700;
+  transition: var(--trans-hv);
 }
 
 .link:hover {
-  color: darkviolet;
+  color: darkblue;
 }

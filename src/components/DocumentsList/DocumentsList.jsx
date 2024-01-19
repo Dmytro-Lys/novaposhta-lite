@@ -20,7 +20,8 @@ const DocumentsList = () => {
  
   const columns = [
     { key: 'id', name: 'Номер', width: 120, headerCellClass: css.cellCenter,  cellClass: css.cellCenter},
-    { key: 'TrackingStatusName', name: 'Статус', width: 100, headerCellClass: css.cellCenter},
+    { key: 'TrackingStatusName', name: 'Статус', width: 100, headerCellClass: css.cellCenter },
+    { key: 'TrackingCurrentStatus', name: 'Детальний статус', width: 180, headerCellClass: css.cellCenter},
     { key: 'DateTime', name: 'Дата створення', width: 90 },
     { key: 'ScheduledDeliveryDate', name: 'Плановий час доставки', width: 105},
     { key: 'Cost', name: 'Оголошена вартість', width: 100, headerCellClass: css.cellCenter, cellClass: css.cellRight },
@@ -42,9 +43,10 @@ const DocumentsList = () => {
     { key: 'Note', name: 'Додаткова інформація', width: 100 },
   ]
 
-  const rows = documents && documents.length > 0 ? documents.map(({
+  const rows = documents && documents.length > 0 ?  documents.map(({
     Number,
     TrackingStatusName, 
+    TrackingCurrentStatus = '',
     DateTime,
     ScheduledDeliveryDate,
     Cost,
@@ -67,7 +69,8 @@ const DocumentsList = () => {
   }) => {
     return {
       id: Number,
-      TrackingStatusName: <GridStatusCell text={TrackingStatusName}/>, //   spanFormatter( TrackingStatusName),
+      TrackingStatusName: <GridStatusCell text={TrackingStatusName} Number={Number} />, //   spanFormatter( TrackingStatusName),
+      TrackingCurrentStatus,
       DateTime: formatDate(DateTime),
       ScheduledDeliveryDate: formatDate(ScheduledDeliveryDate),
       Cost: `${Cost} грн`,

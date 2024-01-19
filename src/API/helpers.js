@@ -34,12 +34,7 @@ export const getDateTo = () => {
 }
 
 export const getStatusTime = statusData => {
-    const { Event, ArrivalTime = '', DepartureTime = '', Date = '' } = statusData
-    switch (Event) {
-      case 'Arrival': return formatDate(ArrivalTime);
-      case 'Departure': return formatDate(DepartureTime);
-      case 'ReceivedWarehouse': return formatDate(Date);
-      case 'ReceivedDoors': return formatDate(Date);
-      default: return '';
-      }
+    const { ArrivalTime , DepartureTime , Date  } = statusData
+    const anyTime = ArrivalTime || DepartureTime || Date || ''
+    return formatDate(anyTime)
 }

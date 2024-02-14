@@ -33,8 +33,7 @@ export const getDateTo = () => {
   return formatDate(date.toString())
 }
 
-export const getStatusTime = statusData => {
-    const { ArrivalTime , DepartureTime , Date  } = statusData
+export const getStatusTime = ({ ArrivalTime , DepartureTime , Date  }) => {
     const anyTime = ArrivalTime || DepartureTime || Date || ''
     return formatDate(anyTime)
 }

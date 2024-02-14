@@ -22,6 +22,10 @@
   background-color: darkblue;
 }
 
+.preparation::before {
+  background-color: cornflowerblue;
+}
+
 .arrived::before {
   background-color: darkorange;
 }

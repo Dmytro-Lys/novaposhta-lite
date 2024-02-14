@@ -1,0 +1,11 @@
+.field {
+  /* padding: 0 8px; */
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  border-width: 1px;
+  outline: none;
+  font-size: 16px;
+  /* outline-width: 1; */
+  /* outline-color: darkblue; */
+}

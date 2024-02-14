@@ -1,5 +1,6 @@
 import { Navigation } from '../Navigation/Navigation';
-import ReceiversList from '../ReceiversList/ReceiversList'
+import ReceiversList from '../ReceiversList/ReceiversList';
+import ReceiverSelect from 'components/ReceiverSelect/ReceiverSelect';
 // import { UserMenu } from '../UserMenu/UserMenu';
 // import { AuthNav } from '../AuthNav/AuthNav';
 // import { useSelector } from "react-redux";
@@ -12,7 +13,8 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <Navigation />
-      <ReceiversList/>
+      {/* <ReceiversList/> */}
+      <ReceiverSelect/>
     </header>
   );
 };

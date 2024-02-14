@@ -2,7 +2,8 @@ import { configureStore} from "@reduxjs/toolkit";
 import { novaposhtaApi } from "API/novaposhtaApi";
 // import { filterReduser } from "./adverts/filterSlice"
 
-import {receiversReduser } from "./receivers/receiversSlice"
+import { receiversReduser } from "./receivers/receiversSlice"
+import { filterReduser } from "./receivers/filterSlice";
 import { rootReducer } from "./root/slice";
 import { queryReducer } from "./query/querySlice";
 import { modalsReducer } from "./modals/modalsSlice";
@@ -24,10 +25,10 @@ export const store = configureStore({
     [novaposhtaApi.reducerPath]: novaposhtaApi.reducer,
     query: queryReducer,
     modals: modalsReducer,
-    documents: documentsReducer
+    documents: documentsReducer,
     // filterFavorites: filterFavoritesReduser,
     // adverts: advertsReduser,
-    // filter: filterReduser
+    filter: filterReduser
   },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

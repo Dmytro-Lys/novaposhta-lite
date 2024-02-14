@@ -17,25 +17,26 @@ const Incomings = () => {
     const Limit = useSelector(getLimit)
     const Page = useSelector(getPage)
     const firstRender = useRef(true)
+    
   
-    useEffect(() => {
-        if (firstRender.current) {
-            firstRender.current = false
-            return
-        }
-        if (!apiKey) return
-        dispatch(fetchDocuments({
-                apiKey,
-                modelName: 'InternetDocument',
-                calledMethod: "getIncomingDocumentsByPhone",
-                methodProperties: {
-                    DateTimeFrom: getDateFrom(),
-                    DateTimeTo: getDateTo(),
-                    Limit,
-                    Page
-                }
-            }));
-  }, [dispatch, apiKey, Limit, Page]);
+//     useEffect(() => {
+//         if (firstRender.current) {
+//             firstRender.current = false
+//             return
+//         }
+//         if (!apiKey) return
+//         dispatch(fetchDocuments({
+//                 apiKey,
+//                 modelName: 'InternetDocument',
+//                 calledMethod: "getIncomingDocumentsByPhone",
+//                 methodProperties: {
+//                     DateTimeFrom: getDateFrom(),
+//                     DateTimeTo: getDateTo(),
+//                     Limit,
+//                     Page
+//                 }
+//             }));
+//   }, [dispatch, apiKey, Limit, Page]);
     
     
     return (

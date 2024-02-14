@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const receiversInitialState = {
     items:[],
-    selectItem: ''
+    selectItem: '',
+    isVisibleReceivers: false
 };
 
 const receiversSlice = createSlice({
@@ -23,9 +24,14 @@ const receiversSlice = createSlice({
             reducer(state, action) {
                 state.selectItem = action.payload   
             }
+        },
+        setIsVisibleReceivers: {
+            reducer(state, action) {
+               state.isVisibleReceivers =  action.payload
+            }
         }
     }
 })
 
-export const { addReceiver, delReceiver, setReceiver } = receiversSlice.actions;
+export const { addReceiver, delReceiver, setReceiver, setIsVisibleReceivers } = receiversSlice.actions;
 export const receiversReduser = receiversSlice.reducer;

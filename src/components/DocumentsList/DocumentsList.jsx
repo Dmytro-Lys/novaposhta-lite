@@ -98,8 +98,8 @@ const DocumentsList = () => {
         // rowsCount={pageSize + 1}
         
           columns={columns}
-          headerRowHeight={45}
-          rowHeight={75}
+          headerRowHeight={40}
+          rowHeight={74}
         />
     )
 }

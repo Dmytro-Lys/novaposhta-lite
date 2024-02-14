@@ -7,6 +7,7 @@ import { filterReduser } from "./receivers/filterSlice";
 import { rootReducer } from "./root/slice";
 import { queryReducer } from "./query/querySlice";
 import { modalsReducer } from "./modals/modalsSlice";
+import { receiverFormReducer } from "./receiverForm/receiverFormSlice";
 import { documentsReducer } from "./documents/documentsSlice";
 import { persistStore, persistReducer, FLUSH, REHYDRATE,
   PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
@@ -25,6 +26,7 @@ export const store = configureStore({
     [novaposhtaApi.reducerPath]: novaposhtaApi.reducer,
     query: queryReducer,
     modals: modalsReducer,
+    receiverForm: receiverFormReducer,
     documents: documentsReducer,
     // filterFavorites: filterFavoritesReduser,
     // adverts: advertsReduser,

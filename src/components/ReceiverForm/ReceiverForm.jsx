@@ -1,37 +1,46 @@
 
-import { useState } from 'react';
+
 import { useSelector, useDispatch } from "react-redux";
-import { addReceiver } from 'redux/receivers/receiversSlice';
+import { addReceiver, changeReceiver } from 'redux/receivers/receiversSlice';
 import { setOpenReceiverModal } from 'redux/modals/modalsSlice';
 import { getReceivers } from 'redux/receivers/selectors';
-
+import {  setReceiverName, setReceiverApiKey, resetForm } from 'redux/receiverForm/receiverFormSlice';
+import { getReceiverId, getReceiverName, getReceiverApiKey } from 'redux/receiverForm/selectors';
 import Notiflix from 'notiflix';
 import 'notiflix/src/notiflix.css';
 import { nanoid } from 'nanoid';
 import {Button, TextField, Box} from '@mui/material'
 
 export const ReceiverForm = () => {
-  const [receiverName, setReceiverName] = useState("");
-  const [apiKey, setApiKey] = useState("");
-  const receivers = useSelector(getReceivers);
   const dispatch = useDispatch();
+ 
+  const receivers = useSelector(getReceivers);
+
+  const id = useSelector(getReceiverId)
+  const receiverName = useSelector(getReceiverName)
+  const apiKey = useSelector(getReceiverApiKey)
+
+  const changeReceiverName = value => dispatch(setReceiverName(value))
+
+  const changeReceiverApiKey = value => dispatch(setReceiverApiKey(value))
 
   const setState = {
-    receiverName: setReceiverName,
-    apiKey: setApiKey
+    receiverName: changeReceiverName,
+    apiKey: changeReceiverApiKey,
   }
+ 
+
   
   const handleChange = e => {
         const { name, value } = e.target;
         setState[name](value);
   }
 
-  const reset= ()=> {
-    setReceiverName("")
-    setApiKey("")
+  const reset = () => {
+    dispatch(resetForm())
   }
   
-  const findReceiver = name => receivers.find(receiver => receiver.receiverName.toLowerCase() === receiverName.toLowerCase())
+  const findReceiver = name => receivers.find(receiver => receiver.receiverName.toLowerCase() === name.toLowerCase())
 
   const handleClose = () => dispatch(setOpenReceiverModal(false));
 
@@ -39,12 +48,20 @@ export const ReceiverForm = () => {
     event.preventDefault();
     if (!receiverName || !apiKey) return Notiflix.Notify.failure(`Fill in all fields`);
     if (findReceiver(receiverName)) return Notiflix.Notify.failure(`${receiverName} is already in receivers`);
-    dispatch(
-      addReceiver({
-      id: nanoid(),  
-      receiverName,
-      apiKey
-    }));
+    if (id) {
+      dispatch(changeReceiver({
+        id,
+        receiverName,
+        apiKey
+      }))
+    } else {
+      dispatch(
+        addReceiver({
+          id: nanoid(),
+          receiverName,
+          apiKey
+        }))
+    };
     reset()
     handleClose()
    };
@@ -89,7 +106,7 @@ export const ReceiverForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Додати отримувача
+              Ok
             </Button>
           </Box>
         </Box>

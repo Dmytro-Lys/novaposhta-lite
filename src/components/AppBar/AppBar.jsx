@@ -1,5 +1,5 @@
 import { Navigation } from '../Navigation/Navigation';
-import ReceiversList from '../ReceiversList/ReceiversList';
+// import ReceiversList from '../ReceiversList/ReceiversList';
 import ReceiverSelect from 'components/ReceiverSelect/ReceiverSelect';
 // import { UserMenu } from '../UserMenu/UserMenu';
 // import { AuthNav } from '../AuthNav/AuthNav';

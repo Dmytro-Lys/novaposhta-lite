@@ -20,6 +20,13 @@ const receiversSlice = createSlice({
                 return state.items.filter(receiver => receiver.id !== action.payload)
           }
         },
+        changeReceiver: {
+            reducer(state, action) {
+                const index = state.items.findIndex(receiver => receiver.id === action.payload.id)
+                if (index === -1) return state.items.push(action.payload)
+                state.items[index] = action.payload
+          }  
+        },
         setReceiver: {
             reducer(state, action) {
                 state.selectItem = action.payload   
@@ -33,5 +40,5 @@ const receiversSlice = createSlice({
     }
 })
 
-export const { addReceiver, delReceiver, setReceiver, setIsVisibleReceivers } = receiversSlice.actions;
+export const { addReceiver, delReceiver, setReceiver, setIsVisibleReceivers, changeReceiver } = receiversSlice.actions;
 export const receiversReduser = receiversSlice.reducer;

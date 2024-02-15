@@ -23,11 +23,17 @@ const ReceiverField = () => {
     useEffect(() => {
         if (firstRender.current) {
             firstRender.current = false
+            // dispatch(changeReceiver({
+            //     id:"ckJojQ5Lq652FRcNwceKK",
+            //     receiverName:'ТОВ АФ "Ім. Чапаєва"',
+            //     apiKey:"44bc2baa0cdd430349756a73b3aa44bd"
+            // }))
+            //  dispatch(setIsVisibleReceivers(false))
             dispatch(setFilter(selectReceiver))
             return
         }
     }, [dispatch, selectReceiver])
-    
+     
     // const handleBlur = () => {
     //     dispatch(setFilter(selectReceiver))
     // }
@@ -36,7 +42,7 @@ const ReceiverField = () => {
         <input
             className={css.field}
             type="text"
-            name="receiverName"
+            name="receiver"
             value={filter}
             onChange={handleChange}
             onFocus={handleFocus}

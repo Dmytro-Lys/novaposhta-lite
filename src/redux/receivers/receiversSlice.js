@@ -6,6 +6,8 @@ const receiversInitialState = {
     isVisibleReceivers: false
 };
 
+
+
 const receiversSlice = createSlice({
     name: "receivers",
     initialState: receiversInitialState,
@@ -17,14 +19,17 @@ const receiversSlice = createSlice({
         },
         delReceiver: {
             reducer(state, action) {
-                return state.items.filter(receiver => receiver.id !== action.payload)
+               state.items = state.items.filter(receiver => receiver.id !== action.payload) 
           }
         },
         changeReceiver: {
             reducer(state, action) {
                 const index = state.items.findIndex(receiver => receiver.id === action.payload.id)
-                if (index === -1) return state.items.push(action.payload)
-                state.items[index] = action.payload
+                if (index === -1) {
+                    state.items.push(action.payload)
+                } else {
+                    state.items[index] = { ...state.items[index], ...action.payload }
+                }
           }  
         },
         setReceiver: {

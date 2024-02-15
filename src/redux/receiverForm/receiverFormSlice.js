@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const receiverFormInitialState = {
-    receiverId: '',
+    id: '',
     receiverName: '',
-    receiverApiKey: ''
+    apiKey: ''
 }
 
 const receiverFormSlice = createSlice({
@@ -12,7 +12,7 @@ const receiverFormSlice = createSlice({
     reducers: {
         setReceiverId: {
             reducer(state, action) {
-                state.receiverId = action.payload
+                state.id = action.payload
             }
         },
         setReceiverName: {
@@ -22,7 +22,15 @@ const receiverFormSlice = createSlice({
         },
         setReceiverApiKey: {
             reducer(state, action) {
-                state.receiverApiKey = action.payload
+                state.apiKey = action.payload
+            }
+        },
+        setReceiverAll: {
+            reducer(state, action) {
+                 const items = Object.keys(state)
+                for (const item of items) {
+                    state[item]=action.payload[item]
+                }
             }
         },
         resetForm: {
@@ -36,5 +44,5 @@ const receiverFormSlice = createSlice({
     }
 })
 
-export const {setReceiverId, setReceiverName, setReceiverApiKey, resetForm } = receiverFormSlice.actions;
+export const {setReceiverId, setReceiverName, setReceiverApiKey, resetForm, setReceiverAll } = receiverFormSlice.actions;
 export const receiverFormReducer = receiverFormSlice.reducer;

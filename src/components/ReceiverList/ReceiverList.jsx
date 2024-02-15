@@ -10,8 +10,8 @@ const ReceiverList = () => {
     return (
         isVisibleReceivers && receivers &&
         <ul className={css.list}>
-                {receivers.map(({ id, receiverName }) => {
-              return <ReceiverItem key={id} id={id} receiver={receiverName} />
+                {receivers.map( receiver => {
+              return <ReceiverItem key={receiver.id} receiver={receiver} />
            })}
         </ul>
     )

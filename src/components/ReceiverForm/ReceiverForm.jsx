@@ -25,7 +25,7 @@ export const ReceiverForm = () => {
   const changeReceiverApiKey = value => dispatch(setReceiverApiKey(value))
 
   const setState = {
-    receiverName: changeReceiverName,
+    receiver: changeReceiverName,
     apiKey: changeReceiverApiKey,
   }
  
@@ -40,14 +40,14 @@ export const ReceiverForm = () => {
     dispatch(resetForm())
   }
   
-  const findReceiver = name => receivers.find(receiver => receiver.receiverName.toLowerCase() === name.toLowerCase())
+  const findReceiver = name => receivers ? receivers.find(receiver => receiver.receiverName.toLowerCase() === name.toLowerCase()) : null
 
   const handleClose = () => dispatch(setOpenReceiverModal(false));
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!receiverName || !apiKey) return Notiflix.Notify.failure(`Fill in all fields`);
-    if (findReceiver(receiverName)) return Notiflix.Notify.failure(`${receiverName} is already in receivers`);
+   
     if (id) {
       dispatch(changeReceiver({
         id,
@@ -55,6 +55,7 @@ export const ReceiverForm = () => {
         apiKey
       }))
     } else {
+      if (findReceiver(receiverName)) return Notiflix.Notify.failure(`${receiverName} is already in receivers`);
       dispatch(
         addReceiver({
           id: nanoid(),
@@ -82,10 +83,10 @@ export const ReceiverForm = () => {
               fullWidth
               id="receiverName"
               label="Отримувач"
-              name="receiverName"
+              name="receiver"
               pattern="^\S+$"
               value={receiverName}
-              autoComplete="receiverName"
+              autoComplete="receiver"
               autoFocus
             />
             <TextField
@@ -106,7 +107,7 @@ export const ReceiverForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Ok
+             { id ? 'Оновити дані': 'Додати отримувача'}
             </Button>
           </Box>
         </Box>

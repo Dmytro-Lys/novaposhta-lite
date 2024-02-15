@@ -16,7 +16,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 const receiversPersistConfig = {
   key: 'receivers',
   storage,
-  // whitelist: ['token']
+  whitelist: ['items', 'selectItem']
 }
 
 export const store = configureStore({

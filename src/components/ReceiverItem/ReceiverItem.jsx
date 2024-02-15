@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { delReceiver, setReceiver, setIsVisibleReceivers } from 'redux/receivers/receiversSlice';
-import { setReceiverId, setReceiverName, setReceiverApiKey } from 'redux/receiverForm/receiverFormSlice';
+import { getReceivers, getSelectReceiver } from 'redux/receivers/selectors';
+import {  setReceiverAll } from 'redux/receiverForm/receiverFormSlice';
 import { setOpenReceiverModal } from 'redux/modals/modalsSlice';
 import { setFilter } from 'redux/receivers/filterSlice';
-import { getReceivers } from 'redux/receivers/selectors';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import  EditIcon  from '@mui/icons-material/Edit';
@@ -11,39 +11,44 @@ import css from './ReceiverItem.module.css'
 
 
 
-const ReceiverItem = ({ receiver, id }) => {
+const ReceiverItem = ({ receiver }) => {
     const dispatch = useDispatch();  
-    const receivers = useSelector(getReceivers);
+    const {id, receiverName} = receiver
+    const receivers = useSelector(getReceivers)
+    const selectId = useSelector(getSelectReceiver)
 
-    const findReceiverById = id => receivers.find(receiver => receiver.id === id)
+    const changeSelectItem = (receivers, id) => {
+        if (receivers.length === 1) return ''
+        const index = receivers.findIndex(receiver => receiver.id === id)
+        if (index === 0) return receivers[1].id
+        return receivers[index - 1].id
+    }
 
-    const handleSelect = (id, receiver) => {
+    const handleSelect = () => {
         dispatch(setReceiver(id))
         dispatch(setIsVisibleReceivers(false))
-        dispatch(setFilter(receiver))
+        dispatch(setFilter(receiverName))
     }
 
-    const delClick = (id) => {
-        
+    const delClick = () => {
+        if (id === selectId) dispatch(setReceiver(changeSelectItem(receivers, id)))
         dispatch(delReceiver(id))
+        
     }
 
 
-    const editClick = (id) => {
-        dispatch(setReceiverId(id))
-        const { receiverName, apiKey } = findReceiverById(id)
-        dispatch(setReceiverName(receiverName))
-        dispatch(setReceiverApiKey(apiKey))
+    const editClick = () => {
+        dispatch(setReceiverAll(receiver))
         dispatch(setOpenReceiverModal(true))
     }
 
     return (
         <li className={css.receiver}  >
-            <p className={css.text} onClick={() => handleSelect(id, receiver)}>{receiver}</p>
-            <IconButton onClick={() => editClick(id)} aria-label="edit">
+            <p className={css.text} onClick={handleSelect}>{receiverName}</p>
+            <IconButton onClick={editClick} aria-label="edit">
                 <EditIcon />
             </IconButton>
-            <IconButton onClick={() => delClick(id)} aria-label="delete">
+            <IconButton onClick={ delClick} aria-label="delete">
                 <DeleteIcon />
             </IconButton>
         </li>

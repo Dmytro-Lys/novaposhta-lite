@@ -12,9 +12,10 @@ const fetchDocumentsFulfilled = (state, { payload }) => {
 } 
 
 const fetchDocumentStatusFulFilled = (state, { payload }) => {
-    const { Barcode, EventDescription } = payload.data[0].movement.now[0]
+    const {number} = payload.data[0]
+    const { EventDescription } = payload.data[0].movement.now[0]
     const statusTime = getStatusTime(payload.data[0].movement.now[0])
-    const index = state.items.findIndex(document => document.Number === Barcode)
+    const index = state.items.findIndex(document => document.Number === number)
     if (index !== -1) state.items[index].TrackingCurrentStatus = `${EventDescription}
     ${statusTime}`
 }

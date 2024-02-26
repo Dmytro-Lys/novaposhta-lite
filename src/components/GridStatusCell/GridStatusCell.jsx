@@ -16,7 +16,7 @@ const GridStatusCell = ({ text, Number }) => {
             return
         }
       if (!REACT_APP_TRACKING_API_KEY) return
-      if (text === 'У дорозі' || text === 'Готується до відправлення') {
+      if (text === 'У дорозі' || text === 'Готується до відправлення' || text === 'Змінено адресу') {
         dispatch(fetchDocumentStatus({
           apiKey: REACT_APP_TRACKING_API_KEY,
           modelName: 'InternetDocument',
@@ -37,6 +37,7 @@ const GridStatusCell = ({ text, Number }) => {
       case 'Отримано': return css.received;
       case 'Проблемні': return css.problematic;
       case 'Готується до відправлення': return css.preparation;
+      case 'Змінено адресу': return css['change-location'];
       default: return css.moved;
       }
       

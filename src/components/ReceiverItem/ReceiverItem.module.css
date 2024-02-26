@@ -1,10 +1,16 @@
 .receiver {
   display: flex;
   align-items: center;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 5px;
+  /* padding-top: 4px;
+  padding-bottom: 4px; */
   /* padding-left: 8px; */
   /* padding-right: 32px; */
+  transition: background-color var(--trans-hv);
+}
+.receiver:hover {
+  background-color: whitesmoke;
 }
 
 .text {

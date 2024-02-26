@@ -9,15 +9,18 @@ import { ReceiverForm } from 'components/ReceiverForm/ReceiverForm';
 
 
 const ReceiverModal = () => {
-    //    const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch()  
- 
+  
   const handleClose = () => dispatch(setOpenReceiverModal(false));
-    const isOpen = useSelector(getOpenReceiverModal) 
+  const isOpen = useSelector(getOpenReceiverModal) 
+
+  const handleClick = e => e.stopPropagation()
+
   return (
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
+        onClick={handleClick}
         open={isOpen}
         onClose={handleClose}
         closeAfterTransition

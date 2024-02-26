@@ -1,11 +1,19 @@
 .field {
-  /* padding: 0 8px; */
+  /* padding: 8px; */
+  /* display: block; */
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 5px;
-  border-width: 1px;
+  border: none;
+  /* border-width: 1px; */
+  /* border-color: whitesmoke; */
   outline: none;
   font-size: 16px;
   /* outline-width: 1; */
   /* outline-color: darkblue; */
+  transition: background-color var(--trans-hv);
+}
+
+.field:hover {
+  background-color: whitesmoke;
 }

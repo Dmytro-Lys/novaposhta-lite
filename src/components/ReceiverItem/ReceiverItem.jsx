@@ -23,10 +23,12 @@ const ReceiverItem = ({ receiver }) => {
         if (index === 0) return receivers[1].id
         return receivers[index - 1].id
     }
+    
+    const closeReceiverList = () =>  dispatch(setIsVisibleReceivers(false))
 
     const handleSelect = () => {
         dispatch(setReceiver(id))
-        dispatch(setIsVisibleReceivers(false))
+        closeReceiverList()
         dispatch(setFilter(receiverName))
     }
 

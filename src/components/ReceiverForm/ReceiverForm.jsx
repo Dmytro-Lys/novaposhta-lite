@@ -1,9 +1,10 @@
 
 
 import { useSelector, useDispatch } from "react-redux";
-import { addReceiver, changeReceiver } from 'redux/receivers/receiversSlice';
+import { addReceiver, changeReceiver, setIsVisibleReceivers } from 'redux/receivers/receiversSlice';
 import { setOpenReceiverModal } from 'redux/modals/modalsSlice';
-import { getReceivers } from 'redux/receivers/selectors';
+import { setFilter} from "redux/receivers/filterSlice";
+import { getReceivers, getIsVisibleReceivers } from 'redux/receivers/selectors';
 import {  setReceiverName, setReceiverApiKey, resetForm } from 'redux/receiverForm/receiverFormSlice';
 import { getReceiverId, getReceiverName, getReceiverApiKey } from 'redux/receiverForm/selectors';
 import Notiflix from 'notiflix';
@@ -15,7 +16,7 @@ export const ReceiverForm = () => {
   const dispatch = useDispatch();
  
   const receivers = useSelector(getReceivers);
-
+  const isVisibleReceivers = useSelector(getIsVisibleReceivers)
   const id = useSelector(getReceiverId)
   const receiverName = useSelector(getReceiverName)
   const apiKey = useSelector(getReceiverApiKey)
@@ -23,6 +24,10 @@ export const ReceiverForm = () => {
   const changeReceiverName = value => dispatch(setReceiverName(value))
 
   const changeReceiverApiKey = value => dispatch(setReceiverApiKey(value))
+
+  const openReceiverList = () => dispatch(setIsVisibleReceivers(true))
+
+  const resetFilter = () => dispatch(setFilter(''))
 
   const setState = {
     receiver: changeReceiverName,
@@ -65,6 +70,10 @@ export const ReceiverForm = () => {
     };
     reset()
     handleClose()
+    if (!isVisibleReceivers) {
+      resetFilter()
+      openReceiverList()
+    }
    };
 
   

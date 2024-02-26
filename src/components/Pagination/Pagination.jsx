@@ -11,7 +11,6 @@ const Pagination = () => {
     const limit = useSelector(getLimit)
     const page = useSelector(getPage)
     const count = useSelector(getDocumentsCount)
-    // console.log(count)
     const handleChangePage = (event,  newPage) => {
         dispatch(setPage(newPage + 1))
     }

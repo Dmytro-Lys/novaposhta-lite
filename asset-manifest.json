@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/novaposhta-advanced/static/css/main.ba53b9a6.css",
-    "main.js": "/novaposhta-advanced/static/js/main.912abb96.js",
-    "static/css/100.2a0f63f3.chunk.css": "/novaposhta-advanced/static/css/100.2a0f63f3.chunk.css",
-    "static/js/100.752023f5.chunk.js": "/novaposhta-advanced/static/js/100.752023f5.chunk.js",
-    "static/css/159.2a0f63f3.chunk.css": "/novaposhta-advanced/static/css/159.2a0f63f3.chunk.css",
-    "static/js/159.f482a797.chunk.js": "/novaposhta-advanced/static/js/159.f482a797.chunk.js",
+    "main.js": "/novaposhta-advanced/static/js/main.11a091b4.js",
+    "static/css/100.62d4dd1a.chunk.css": "/novaposhta-advanced/static/css/100.62d4dd1a.chunk.css",
+    "static/js/100.a0d4309d.chunk.js": "/novaposhta-advanced/static/js/100.a0d4309d.chunk.js",
+    "static/css/159.62d4dd1a.chunk.css": "/novaposhta-advanced/static/css/159.62d4dd1a.chunk.css",
+    "static/js/159.22abee9e.chunk.js": "/novaposhta-advanced/static/js/159.22abee9e.chunk.js",
     "static/js/623.81d6d228.chunk.js": "/novaposhta-advanced/static/js/623.81d6d228.chunk.js",
     "static/media/Roboto-Medium.ttf": "/novaposhta-advanced/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/novaposhta-advanced/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/novaposhta-advanced/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "index.html": "/novaposhta-advanced/index.html",
     "main.ba53b9a6.css.map": "/novaposhta-advanced/static/css/main.ba53b9a6.css.map",
-    "main.912abb96.js.map": "/novaposhta-advanced/static/js/main.912abb96.js.map",
-    "100.2a0f63f3.chunk.css.map": "/novaposhta-advanced/static/css/100.2a0f63f3.chunk.css.map",
-    "100.752023f5.chunk.js.map": "/novaposhta-advanced/static/js/100.752023f5.chunk.js.map",
-    "159.2a0f63f3.chunk.css.map": "/novaposhta-advanced/static/css/159.2a0f63f3.chunk.css.map",
-    "159.f482a797.chunk.js.map": "/novaposhta-advanced/static/js/159.f482a797.chunk.js.map",
+    "main.11a091b4.js.map": "/novaposhta-advanced/static/js/main.11a091b4.js.map",
+    "100.62d4dd1a.chunk.css.map": "/novaposhta-advanced/static/css/100.62d4dd1a.chunk.css.map",
+    "100.a0d4309d.chunk.js.map": "/novaposhta-advanced/static/js/100.a0d4309d.chunk.js.map",
+    "159.62d4dd1a.chunk.css.map": "/novaposhta-advanced/static/css/159.62d4dd1a.chunk.css.map",
+    "159.22abee9e.chunk.js.map": "/novaposhta-advanced/static/js/159.22abee9e.chunk.js.map",
     "623.81d6d228.chunk.js.map": "/novaposhta-advanced/static/js/623.81d6d228.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba53b9a6.css",
-    "static/js/main.912abb96.js"
+    "static/js/main.11a091b4.js"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/novaposhta-advanced/static/css/main.a1956804.css",
-    "main.js": "/novaposhta-advanced/static/js/main.09f823a4.js",
+    "main.css": "/novaposhta-advanced/static/css/main.ba53b9a6.css",
+    "main.js": "/novaposhta-advanced/static/js/main.912abb96.js",
     "static/css/100.2a0f63f3.chunk.css": "/novaposhta-advanced/static/css/100.2a0f63f3.chunk.css",
     "static/js/100.752023f5.chunk.js": "/novaposhta-advanced/static/js/100.752023f5.chunk.js",
     "static/css/159.2a0f63f3.chunk.css": "/novaposhta-advanced/static/css/159.2a0f63f3.chunk.css",
@@ -11,8 +11,8 @@
     "static/media/Roboto-Regular.ttf": "/novaposhta-advanced/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/novaposhta-advanced/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "index.html": "/novaposhta-advanced/index.html",
-    "main.a1956804.css.map": "/novaposhta-advanced/static/css/main.a1956804.css.map",
-    "main.09f823a4.js.map": "/novaposhta-advanced/static/js/main.09f823a4.js.map",
+    "main.ba53b9a6.css.map": "/novaposhta-advanced/static/css/main.ba53b9a6.css.map",
+    "main.912abb96.js.map": "/novaposhta-advanced/static/js/main.912abb96.js.map",
     "100.2a0f63f3.chunk.css.map": "/novaposhta-advanced/static/css/100.2a0f63f3.chunk.css.map",
     "100.752023f5.chunk.js.map": "/novaposhta-advanced/static/js/100.752023f5.chunk.js.map",
     "159.2a0f63f3.chunk.css.map": "/novaposhta-advanced/static/css/159.2a0f63f3.chunk.css.map",
@@ -20,7 +20,7 @@
     "623.81d6d228.chunk.js.map": "/novaposhta-advanced/static/js/623.81d6d228.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1956804.css",
-    "static/js/main.09f823a4.js"
+    "static/css/main.ba53b9a6.css",
+    "static/js/main.912abb96.js"
   ]
 }

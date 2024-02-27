@@ -1,17 +1,12 @@
-// import clsx from "clsx"
-// import { DataGrid } from '@mui/x-data-grid';
 import { formatDate } from 'API/helpers';
 import { useSelector } from 'react-redux';
 import { getDocuments } from 'redux/documents/selectors';
-// import { getLimit, getPage } from 'redux/query/selectors';
-
 
 import css from './DocumentsList.module.css'
 import 'react-data-grid/lib/styles.css';
 import './CustomGridStyles.css';
 import ReactDataGrid from 'react-data-grid';
 import GridStatusCell from "components/GridStatusCell/GridStatusCell";
-
 
 const DocumentsList = () => {
 
@@ -94,8 +89,6 @@ const DocumentsList = () => {
     return (
         <ReactDataGrid
           rows={rows}
-        // rowsCount={pageSize + 1}
-        
           columns={columns}
           headerRowHeight={40}
           rowHeight={74}

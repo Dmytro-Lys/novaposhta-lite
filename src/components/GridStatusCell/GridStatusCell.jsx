@@ -9,7 +9,7 @@ const GridStatusCell = ({ text, Number }) => {
     const dispatch = useDispatch()
     const firstRender = useRef(true)
   const { REACT_APP_TRACKING_API_KEY } = process.env;
-  
+
     useEffect(() => {
         if (firstRender.current) {
             firstRender.current = false

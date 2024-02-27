@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux"; 
 import { setOpenReceiverModal } from 'redux/modals/modalsSlice';
 import { resetForm } from "redux/receiverForm/receiverFormSlice";
@@ -26,17 +26,18 @@ const ReceiverSelect = () => {
 
     const handleClick = e => e.stopPropagation()
 
-    useEffect(() => {
-        const closeList = () => {
+     const closeList = useCallback(() => {
             if (isVisibleReceivers && !isOpenReceiverModal) {
                 dispatch(setFilter(selectReceiver))
                 dispatch(setIsVisibleReceivers(false))
             }
-        }
-        const handleKeyDown = e => {
+     }, [dispatch, isVisibleReceivers, isOpenReceiverModal, selectReceiver])
+    
+     const handleKeyDown = useCallback( e => {
             if (e.key === "Escape") closeList()
-        }
-        
+        }, [closeList])
+    
+    useEffect(() => {
 
         if (isVisibleReceivers) {
             document.addEventListener('keydown', handleKeyDown);
@@ -47,7 +48,7 @@ const ReceiverSelect = () => {
            document.removeEventListener('keydown', handleKeyDown);  
            document.removeEventListener('click', closeList);
         };
-    }, [isVisibleReceivers,  isOpenReceiverModal, dispatch, selectReceiver])
+    }, [handleKeyDown, closeList, isVisibleReceivers])
     
 
     return (

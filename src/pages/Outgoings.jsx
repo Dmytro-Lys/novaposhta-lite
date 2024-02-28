@@ -4,7 +4,7 @@ import { getLimit, getPage } from 'redux/query/selectors';
 import { fetchDocuments } from 'API/novaposhtaAxiosAPI';
 import { getDateFrom, getDateTo } from 'API/helpers';
 
-import {  useEffect, useRef } from 'react';
+import {  useEffect } from 'react';
 import DocumentsList from 'components/DocumentsList/DocumentsList';
 import Pagination from 'components/Pagination/Pagination';
 
@@ -14,13 +14,13 @@ const Outgoings = () => {
     const apiKey = useSelector(getSelectApiKey)
     const Limit = useSelector(getLimit)
     const Page = useSelector(getPage)
-    const firstRender = useRef(true)
+    // const firstRender = useRef(true)
   
     useEffect(() => {
-        if (firstRender.current) {
-            firstRender.current = false
-            return
-        }
+        // if (firstRender.current) {
+        //     firstRender.current = false
+        //     return
+        // }
         if (!apiKey) return
         dispatch(fetchDocuments({
                 apiKey,

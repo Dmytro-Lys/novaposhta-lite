@@ -49,6 +49,7 @@ const ReceiverField = () => {
             className={css.field}
             type="text"
             name="receiver"
+            placeholder="Додайте отримувача"
             value={filter}
             onChange={handleChange}
             onClick={handleClick}

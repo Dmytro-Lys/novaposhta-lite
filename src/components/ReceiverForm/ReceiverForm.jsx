@@ -10,7 +10,11 @@ import { getReceiverId, getReceiverName, getReceiverApiKey } from 'redux/receive
 import Notiflix from 'notiflix';
 import 'notiflix/src/notiflix.css';
 import { nanoid } from 'nanoid';
-import {Button, TextField, Box} from '@mui/material'
+
+import { TextField, Box } from '@mui/material'
+
+import StyledButton from "components/StyledButton/StyledButton";
+
 
 export const ReceiverForm = () => {
   const dispatch = useDispatch();
@@ -51,7 +55,7 @@ export const ReceiverForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!receiverName || !apiKey) return Notiflix.Notify.failure(`Fill in all fields`);
+    if (!receiverName || !apiKey) return Notiflix.Notify.failure(`Заповніть всі поля`);
    
     if (id) {
       dispatch(changeReceiver({
@@ -60,7 +64,7 @@ export const ReceiverForm = () => {
         apiKey
       }))
     } else {
-      if (findReceiver(receiverName)) return Notiflix.Notify.failure(`${receiverName} is already in receivers`);
+      if (findReceiver(receiverName)) return Notiflix.Notify.failure(`${receiverName} вже є в переліку`);
       dispatch(
         addReceiver({
           id: nanoid(),
@@ -110,14 +114,15 @@ export const ReceiverForm = () => {
               id="apiKey"
               autoComplete="apiKey"
             />
-            <Button
+            <StyledButton
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              
             >
              { id ? 'Оновити дані': 'Додати отримувача'}
-            </Button>
+            </StyledButton>
           </Box>
         </Box>
         )

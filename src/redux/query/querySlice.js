@@ -18,10 +18,18 @@ const querySlice = createSlice({
             reducer(state, action) {
                 state.page = action.payload
             }
+        },
+        resetQuery: {
+            reducer(state, _) {
+                const items = Object.keys(state)
+                for (const item of items) {
+                    state[item]=queryInitialState[item]
+                }
+            }
         }
 
     }
 })
 
-export const { setLimit, setPage } = querySlice.actions;
+export const { setLimit, setPage,  resetQuery } = querySlice.actions;
 export const queryReducer = querySlice.reducer;

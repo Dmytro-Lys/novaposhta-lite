@@ -3,6 +3,7 @@
 import {  useSelector, useDispatch } from 'react-redux';
 import { getSelectApiKey } from 'redux/receivers/selectors';
 import { getLimit, getPage } from 'redux/query/selectors';
+import { resetQuery } from 'redux/query/querySlice';
 import { fetchDocuments } from 'API/novaposhtaAxiosAPI';
 import { getDateFrom, getDateTo } from 'API/helpers';
 
@@ -16,7 +17,12 @@ const Incomings = () => {
     const Limit = useSelector(getLimit)
     const Page = useSelector(getPage)
     // const firstRender = useRef(true)
-    
+
+    useEffect(() => {
+        if (!apiKey) return
+        dispatch(resetQuery())
+    },[dispatch, apiKey]
+    )
   
     useEffect(() => {
         // if (firstRender.current) {
@@ -36,6 +42,7 @@ const Incomings = () => {
                 }
             }));
   }, [dispatch, apiKey, Limit, Page]);
+    
     
     
     return (

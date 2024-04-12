@@ -16,6 +16,7 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+          
         env:
            REACT_APP_TRACKING_API_KEY: ${{secrets.REACT_APP_TRACKING_API_KEY}}
 

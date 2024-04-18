@@ -17,7 +17,7 @@ const GridStatusCell = ({ text, Number }) => {
         //     firstRender.current = false
         //     return
         // }
-      if (!REACT_APP_TRACKING_API_KEY) return console.log('TRACKING_API_KEY is not read')
+      if (!REACT_APP_TRACKING_API_KEY) return 
       if (text === 'У дорозі' || text === 'Готується до відправлення' || text === 'Змінено адресу') {
         dispatch(fetchDocumentStatus({
           apiKey: REACT_APP_TRACKING_API_KEY,

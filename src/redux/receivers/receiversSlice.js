@@ -46,4 +46,4 @@ const receiversSlice = createSlice({
 })
 
 export const { addReceiver, delReceiver, setReceiver, setIsVisibleReceivers, changeReceiver } = receiversSlice.actions;
-export const receiversReduser = receiversSlice.reducer;
+export const receiversReducer = receiversSlice.reducer;

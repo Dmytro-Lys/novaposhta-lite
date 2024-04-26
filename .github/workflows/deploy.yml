@@ -20,7 +20,9 @@ jobs:
       - name: Tracking API Key 
         env:
           REACT_APP_TRACKING_API_KEY: ${{secrets.REACT_APP_TRACKING_API_KEY}}
-        run: echo "Tracking_API_KEY is $REACT_APP_TRACKING_API_KEY"
+        run: 
+          echo "Tracking_API_KEY is $REACT_APP_TRACKING_API_KEY"
+          echo "Secret Tracking_API_KEY is ${{secrets.REACT_APP_TRACKING_API_KEY}}"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:

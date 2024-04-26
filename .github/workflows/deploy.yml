@@ -18,7 +18,8 @@ jobs:
           npm run build
         env:
           REACT_APP_TRACKING_API_KEY: ${{secrets.REACT_APP_TRACKING_API_KEY}}
- 
+      - name: Tracking API Key 
+        run: echo "Tracking_API_KEY is $REACT_APP_TRACKING_API_KEY"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:

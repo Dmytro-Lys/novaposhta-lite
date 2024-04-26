@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
@@ -19,7 +20,7 @@ jobs:
         
       - name: Tracking API Key 
         env:
-          REACT_APP_TRACKING_API_KEY: ${{github-pages.secrets.REACT_APP_TRACKING_API_KEY}}
+          REACT_APP_TRACKING_API_KEY: ${{secrets.REACT_APP_TRACKING_API_KEY}}
         run: 
           echo "Tracking_API_KEY is $REACT_APP_TRACKING_API_KEY"
       - name: Deploy 🚀

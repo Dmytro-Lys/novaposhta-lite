@@ -37,6 +37,7 @@ const GridStatusCell = ({ text, Number }) => {
     switch (statusName) {
       case 'Прибув у відділення': return css.arrived;
       case 'Отримано': return css.received;
+      case 'Одержано': return css.received;
       case 'Проблемні': return css.problematic;
       case 'Готується до відправлення': return css.preparation;
       case 'Змінено адресу': return css['change-location'];
@@ -46,7 +47,7 @@ const GridStatusCell = ({ text, Number }) => {
 
   }  
     return (
-        <span className={clsx(css.status, getStatusClass(text))}>{text}</span>
+        <span className={clsx(css.status, getStatusClass(text))}>{text === 'Одержано' ? 'Отримано' : text}</span>
     )
 }
 

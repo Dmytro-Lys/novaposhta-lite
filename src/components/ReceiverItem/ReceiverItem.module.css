@@ -3,11 +3,8 @@
   align-items: center;
   padding: 4px 8px 4px 8px;
   border-radius: 5px;
-  /* padding-top: 4px;
-  padding-bottom: 4px; */
-  /* padding-left: 8px; */
-  /* padding-right: 32px; */
   transition: background-color var(--trans-hv);
+  cursor: pointer;
 }
 .receiver:hover {
   background-color: whitesmoke;
@@ -15,9 +12,8 @@
 
 .text {
   font-size: 14px;
-  /* width: 120px; */
-  width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }

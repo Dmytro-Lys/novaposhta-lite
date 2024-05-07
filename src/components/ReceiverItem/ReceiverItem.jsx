@@ -32,21 +32,22 @@ const ReceiverItem = ({ receiver }) => {
         dispatch(setFilter(receiverName))
     }
 
-    const delClick = () => {
+    const delClick = e => {
+        e.stopPropagation()
         if (id === selectId) dispatch(setReceiver(changeSelectItem(receivers, id)))
         dispatch(delReceiver(id))
-        
     }
 
 
-    const editClick = () => {
+    const editClick = e => {
+        e.stopPropagation()
         dispatch(setReceiverAll(receiver))
         dispatch(setOpenReceiverModal(true))
     }
 
     return (
-        <li className={css.receiver}  >
-            <p className={css.text} onClick={handleSelect}>{receiverName}</p>
+        <li className={css.receiver}  onClick={handleSelect}>
+            <p className={css.text} >{receiverName}</p>
             <IconButton onClick={editClick} aria-label="edit">
                 <EditIcon />
             </IconButton>

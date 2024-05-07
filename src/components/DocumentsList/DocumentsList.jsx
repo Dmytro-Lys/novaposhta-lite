@@ -13,15 +13,15 @@ const DocumentsList = () => {
   const documents = useSelector(getDocuments)
  
   const columns = [
-    { key: 'id', name: 'Номер', width: 120, headerCellClass: css.cellCenter,  cellClass: css.cellCenter},
-    { key: 'TrackingStatusName', name: 'Статус', width: 100, headerCellClass: css.cellCenter },
-    { key: 'TrackingCurrentStatus', name: 'Детальний статус', width: 180, headerCellClass: css.cellCenter},
+    { key: 'id', name: 'Номер', width: 120,  cellClass: css.cellCenter},
+    { key: 'TrackingStatusName', name: 'Статус', width: 100 },
+    { key: 'TrackingCurrentStatus', name: 'Детальний статус', width: 180},
     { key: 'DateTime', name: 'Дата створення', width: 90 },
     { key: 'ScheduledDeliveryDate', name: 'Плановий час доставки', width: 105},
-    { key: 'Cost', name: 'Оголошена вартість', width: 100, headerCellClass: css.cellCenter, cellClass: css.cellRight },
-    { key: 'DocumentCost', name: 'Вартість доставки', width: 100, headerCellClass: css.cellCenter, cellClass: css.cellRight },
-    { key: 'DocumentWeight', name: 'Вага', width: 70, headerCellClass: css.cellCenter, cellClass: css.cellRight },
-    { key: 'SeatsAmount', name: 'Кількість місць', width: 80, headerCellClass: css.cellCenter, cellClass: css.cellCenter },
+    { key: 'Cost', name: 'Оголошена вартість', width: 100,  cellClass: css.cellRight },
+    { key: 'DocumentCost', name: 'Вартість доставки', width: 100,  cellClass: css.cellRight },
+    { key: 'DocumentWeight', name: 'Вага', width: 70,  cellClass: css.cellRight },
+    { key: 'SeatsAmount', name: 'Кількість місць', width: 80, cellClass: css.cellCenter },
     { key: 'CargoDescription', name: 'Опис відправлення', width: 120 },
     { key: 'CounterpartySenderDescription', name: 'Відправник', width: 120 },
     { key: 'SenderName', name: 'Контакт відправника', width: 110 },

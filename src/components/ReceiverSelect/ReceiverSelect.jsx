@@ -6,16 +6,19 @@ import { setIsVisibleReceivers } from 'redux/receivers/receiversSlice'
 import { setFilter} from "redux/receivers/filterSlice";
 import { getIsVisibleReceivers, getSelectReceiverName } from 'redux/receivers/selectors'
 import { getOpenReceiverModal } from 'redux/modals/selectors'
+import { getOpenReceiverDialog } from "redux/dialogs/selectors";
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/AddCircle';
 import ReceiverField from "components/ReceiverField/ReceiverField";
 import ReceiverList from "components/ReceiverList/ReceiverList";
 import ReceiverModal from "components/ReceiverModal/ReceiverModal";
+import ReceiverDialog from "components/ReceiverDialog/ReceiverDialog";
 import css from './ReceiverSelect.module.css'
 
 const ReceiverSelect = () => {
     const dispatch = useDispatch();
     const isOpenReceiverModal = useSelector(getOpenReceiverModal)
+    const isOpenReceiverDialog = useSelector(getOpenReceiverDialog)
     const isVisibleReceivers = useSelector(getIsVisibleReceivers)
     const selectReceiver = useSelector(getSelectReceiverName)
     
@@ -27,11 +30,11 @@ const ReceiverSelect = () => {
     const handleClick = e => e.stopPropagation()
 
      const closeList = useCallback(() => {
-            if (isVisibleReceivers && !isOpenReceiverModal) {
+            if (isVisibleReceivers && !isOpenReceiverModal && !isOpenReceiverDialog) {
                 dispatch(setFilter(selectReceiver))
                 dispatch(setIsVisibleReceivers(false))
             }
-     }, [dispatch, isVisibleReceivers, isOpenReceiverModal, selectReceiver])
+     }, [dispatch, isVisibleReceivers, isOpenReceiverModal, isOpenReceiverDialog, selectReceiver])
     
      const handleKeyDown = useCallback( e => {
             if (e.key === "Escape") closeList()
@@ -61,6 +64,7 @@ const ReceiverSelect = () => {
                 <ReceiverList/>
             </div>
             <ReceiverModal />
+            <ReceiverDialog/>
         </>    
     )
 }

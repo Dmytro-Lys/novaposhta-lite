@@ -14,8 +14,7 @@ const Outgoings = () => {
     const apiKey = useSelector(getSelectApiKey)
     const Limit = useSelector(getLimit)
     const Page = useSelector(getPage)
-    // const firstRender = useRef(true)
-
+ 
      useEffect(() => {
         if (!apiKey) return
         dispatch(resetQuery())
@@ -23,10 +22,6 @@ const Outgoings = () => {
     )
   
     useEffect(() => {
-        // if (firstRender.current) {
-        //     firstRender.current = false
-        //     return
-        // }
         if (!apiKey) return
         dispatch(fetchDocuments({
                 apiKey,
@@ -42,10 +37,10 @@ const Outgoings = () => {
     }, [dispatch, apiKey, Limit, Page]);
     
     return (
-         <div>
+         <>
             <DocumentsList />
             <Pagination />
-         </div> 
+         </> 
     )
 }
 

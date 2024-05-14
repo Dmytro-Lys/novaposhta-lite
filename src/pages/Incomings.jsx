@@ -25,10 +25,6 @@ const Incomings = () => {
     )
   
     useEffect(() => {
-        // if (firstRender.current) {
-        //     firstRender.current = false
-        //     return
-        // }
         if (!apiKey) return
         dispatch(fetchDocuments({
                 apiKey,
@@ -46,12 +42,10 @@ const Incomings = () => {
     
     
     return (
-        //  <Container component="main" maxWidth='100%'>
-         <div>
+         <>
             <DocumentsList />
             <Pagination />
-         </div>   
-        //   </Container>
+         </>   
     )
 }
 

@@ -1,5 +1,5 @@
 import clsx from "clsx"
-
+import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import {  useEffect } from "react";
 import { fetchDocumentStatus } from 'API/novaposhtaAxiosAPI';
@@ -8,15 +8,9 @@ import css from './GridStatusCell.module.css'
 
 const GridStatusCell = ({ text, Number }) => {
     const dispatch = useDispatch()
-    // const firstRender = useRef(true)
-  // const { REACT_APP_TRACKING_API_KEY } = process.env;
     const REACT_APP_TRACKING_API_KEY = useSelector(getTrackingApiKey)
 
     useEffect(() => {
-        // if (firstRender.current) {
-        //     firstRender.current = false
-        //     return
-        // }
       if (!REACT_APP_TRACKING_API_KEY) return 
       if (text === 'У дорозі' || text === 'Готується до відправлення' || text === 'Змінено адресу') {
         dispatch(fetchDocumentStatus({
@@ -52,3 +46,8 @@ const GridStatusCell = ({ text, Number }) => {
 }
 
 export default GridStatusCell
+
+GridStatusCell.propTypes = {
+  text: PropTypes.string.isRequired,
+  Number: PropTypes.string.isRequired
+}

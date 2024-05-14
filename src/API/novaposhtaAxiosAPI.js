@@ -7,8 +7,7 @@ export const fetchDocuments = createAsyncThunk(
   "documents/fetchAll",
   async (body, thunkAPI) => {
     try {
-        const response = await axios.post("/", body);
-        // console.log (response.data)
+      const response = await axios.post("/", body);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message||error.response.data.name||error.message);
@@ -20,8 +19,7 @@ export const fetchDocumentStatus = createAsyncThunk(
   "documents/fetchStatus",
   async (body, thunkAPI) => {
     try {
-        const response = await axios.post("/", body);
-        // console.log (response.data)
+      const response = await axios.post("/", body);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message||error.response.data.name||error.message);

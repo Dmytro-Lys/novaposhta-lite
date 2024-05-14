@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import PropTypes from "prop-types";
 import { setReceiver, setIsVisibleReceivers } from 'redux/receivers/receiversSlice';
 // import { getReceivers, getSelectReceiver } from 'redux/receivers/selectors';
 import {  setReceiverAll } from 'redux/receiverForm/receiverFormSlice';
@@ -15,16 +16,7 @@ import css from './ReceiverItem.module.css'
 const ReceiverItem = ({ receiver }) => {
     const dispatch = useDispatch();  
     const {id, receiverName} = receiver
-    // const receivers = useSelector(getReceivers)
-    // const selectId = useSelector(getSelectReceiver)
-
-    // const changeSelectItem = (receivers, id) => {
-    //     if (receivers.length === 1) return ''
-    //     const index = receivers.findIndex(receiver => receiver.id === id)
-    //     if (index === 0) return receivers[1].id
-    //     return receivers[index - 1].id
-    // }
-    
+       
     const closeReceiverList = () =>  dispatch(setIsVisibleReceivers(false))
 
     const handleSelect = () => {
@@ -60,3 +52,7 @@ const ReceiverItem = ({ receiver }) => {
 }
 
 export default ReceiverItem
+
+ReceiverItem.propTypes = {
+    receiver: PropTypes.object.isRequired
+}

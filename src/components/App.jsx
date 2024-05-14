@@ -16,11 +16,7 @@ export const App = () => {
   } else {
     console.log('TRACKING_API_KEY is not read (APP)')
   }
-  // useEffect(() => {
-  //   if (!REACT_APP_TRACKING_API_KEY) return console.log('TRACKING_API_KEY is not read (APP)')
-  //   dispatch(setTrackingApiKey(REACT_APP_TRACKING_API_KEY))
-  // }, [dispatch, REACT_APP_TRACKING_API_KEY])
-  
+ 
   return  (
     <Routes>
       <Route path="/" element={<Layout />}>

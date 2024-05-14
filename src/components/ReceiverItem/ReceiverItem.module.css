@@ -2,10 +2,19 @@
   display: flex;
   align-items: center;
   padding: 4px 8px 4px 8px;
-  border-radius: 5px;
   transition: background-color var(--trans-hv);
   cursor: pointer;
 }
+.receiver:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.receiver:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .receiver:hover {
   background-color: whitesmoke;
 }

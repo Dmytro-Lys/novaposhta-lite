@@ -10,7 +10,7 @@ import { documentsReducer } from "./documents/documentsSlice";
 import { persistStore, persistReducer, FLUSH, REHYDRATE,
   PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { trackingReducer } from "./tracking/trackingSlice";
+
 
 const receiversPersistConfig = {
   key: 'receivers',
@@ -27,8 +27,7 @@ export const store = configureStore({
     dialogs: dialogsReducer,
     receiverForm: receiverFormReducer,
     documents: documentsReducer,
-    filter: filterReducer,
-    tracking: trackingReducer
+    filter: filterReducer
   },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

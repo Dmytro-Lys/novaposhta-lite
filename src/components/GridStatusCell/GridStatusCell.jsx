@@ -1,15 +1,15 @@
 import clsx from "clsx"
 import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, } from "react-redux";
 import {  useEffect } from "react";
 import { fetchDocumentStatus } from 'API/novaposhtaAxiosAPI';
-import { getTrackingApiKey } from "redux/tracking/selectors";
 import css from './GridStatusCell.module.css'
 
 const GridStatusCell = ({ text, Number }) => {
     const dispatch = useDispatch()
-    const REACT_APP_TRACKING_API_KEY = useSelector(getTrackingApiKey)
-
+    const { REACT_APP_TRACKING_API_KEY } = process.env;
+    if (!REACT_APP_TRACKING_API_KEY) console.log('TRACKING_API_KEY is not read')
+    
     useEffect(() => {
       if (!REACT_APP_TRACKING_API_KEY) return 
       if (text === 'У дорозі' || text === 'Готується до відправлення' || text === 'Змінено адресу') {

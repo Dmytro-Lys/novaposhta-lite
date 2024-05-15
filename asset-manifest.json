@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/novaposhta-lite/static/css/main.672ab257.css",
-    "main.js": "/novaposhta-lite/static/js/main.9bcd69ba.js",
+    "main.js": "/novaposhta-lite/static/js/main.ceadb608.js",
     "static/css/100.057c81f7.chunk.css": "/novaposhta-lite/static/css/100.057c81f7.chunk.css",
-    "static/js/100.a3fe2e2a.chunk.js": "/novaposhta-lite/static/js/100.a3fe2e2a.chunk.js",
+    "static/js/100.091600d1.chunk.js": "/novaposhta-lite/static/js/100.091600d1.chunk.js",
     "static/css/159.057c81f7.chunk.css": "/novaposhta-lite/static/css/159.057c81f7.chunk.css",
-    "static/js/159.50bb91ba.chunk.js": "/novaposhta-lite/static/js/159.50bb91ba.chunk.js",
+    "static/js/159.644056b4.chunk.js": "/novaposhta-lite/static/js/159.644056b4.chunk.js",
     "static/js/623.06eff070.chunk.js": "/novaposhta-lite/static/js/623.06eff070.chunk.js",
     "static/media/Roboto-Medium.ttf": "/novaposhta-lite/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/novaposhta-lite/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/novaposhta-lite/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "index.html": "/novaposhta-lite/index.html",
     "main.672ab257.css.map": "/novaposhta-lite/static/css/main.672ab257.css.map",
-    "main.9bcd69ba.js.map": "/novaposhta-lite/static/js/main.9bcd69ba.js.map",
+    "main.ceadb608.js.map": "/novaposhta-lite/static/js/main.ceadb608.js.map",
     "100.057c81f7.chunk.css.map": "/novaposhta-lite/static/css/100.057c81f7.chunk.css.map",
-    "100.a3fe2e2a.chunk.js.map": "/novaposhta-lite/static/js/100.a3fe2e2a.chunk.js.map",
+    "100.091600d1.chunk.js.map": "/novaposhta-lite/static/js/100.091600d1.chunk.js.map",
     "159.057c81f7.chunk.css.map": "/novaposhta-lite/static/css/159.057c81f7.chunk.css.map",
-    "159.50bb91ba.chunk.js.map": "/novaposhta-lite/static/js/159.50bb91ba.chunk.js.map",
+    "159.644056b4.chunk.js.map": "/novaposhta-lite/static/js/159.644056b4.chunk.js.map",
     "623.06eff070.chunk.js.map": "/novaposhta-lite/static/js/623.06eff070.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.672ab257.css",
-    "static/js/main.9bcd69ba.js"
+    "static/js/main.ceadb608.js"
   ]
 }
